@@ -149,7 +149,7 @@ def main():
         )
 
     with col3:
-        eyesight_long = st.number_input(
+        eyesight_long = st.selectbox(
             FEATURE_LABELS['eyesight_long'], EYE_OPTIONS, format_func=EYE_FMT
         )
         marriage = st.selectbox(
