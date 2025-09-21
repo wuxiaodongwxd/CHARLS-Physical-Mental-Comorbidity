@@ -153,7 +153,7 @@ def main():
             FEATURE_LABELS['eyesight_long'], EYE_OPTIONS, format_func=EYE_FMT
         )
         marriage = st.selectbox(
-            FEATURE_LABELS['marriage'], PHA_OPTIONS, format_func=PHA_FMT
+            FEATURE_LABELS['marriage'], MARRIAGE_OPTIONS, format_func=MARRIAGE_FMT
         )
 
 
