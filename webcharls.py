@@ -130,11 +130,11 @@ def main():
         adl = st.selectbox(
             FEATURE_LABELS['adl'], YES_NO_OPTIONS, format_func=YES_NO_FMT
         )
+
+    with col2:
         age = st.number_input(
             FEATURE_LABELS['age'], min_value=50, max_value=108, value=50, step=1
         )
-
-    with col2:
         # 认知原始分值（滑块输入）
         score_raw = st.slider(
             "Cognitive function score (raw)",
@@ -146,13 +146,16 @@ def main():
         BMI = st.selectbox(
             FEATURE_LABELS['BMI'], BMI_OPTIONS, format_func=BMI_FMT
         )
+        score_norm = (score_raw - SCORE_RAW_MIN) / (SCORE_RAW_MAX - SCORE_RAW_MIN)
+
+    with col3:
         eyesight_long = st.number_input(
             FEATURE_LABELS['eyesight_long'], EYE_OPTIONS, format_func=EYE_FMT
         )
         marriage = st.selectbox(
             FEATURE_LABELS['marriage'], PHA_OPTIONS, format_func=PHA_FMT
         )
-        score_norm = (score_raw - SCORE_RAW_MIN) / (SCORE_RAW_MAX - SCORE_RAW_MIN)
+
 
     if st.button("Predict"):
         # 按训练顺序组装输入行
