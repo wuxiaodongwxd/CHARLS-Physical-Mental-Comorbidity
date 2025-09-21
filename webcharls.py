@@ -74,7 +74,7 @@ EYE_FMT = lambda x: "Normal" if x == 0 else "Poor"
 # 加载模型；为部分环境提供 numpy._core 兼容兜底
 @st.cache_resource
 def load_model():
-    model_path = 'lasi_result.pkl'
+    model_path = 'charls_result.pkl'
     try:
         return joblib.load(model_path)
     except ModuleNotFoundError as e:
