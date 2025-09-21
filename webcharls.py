@@ -143,10 +143,10 @@ def main():
             value=int(SCORE_RAW_MIN),
             step=1,
         )
+        score_norm = (score_raw - SCORE_RAW_MIN) / (SCORE_RAW_MAX - SCORE_RAW_MIN)
         BMI = st.selectbox(
             FEATURE_LABELS['BMI'], BMI_OPTIONS, format_func=BMI_FMT
         )
-        score_norm = (score_raw - SCORE_RAW_MIN) / (SCORE_RAW_MAX - SCORE_RAW_MIN)
 
     with col3:
         eyesight_long = st.number_input(
